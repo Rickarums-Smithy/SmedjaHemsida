@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bildgalleri – Välj kategori</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; }
+    header { background: #444; color: #fff; padding: 1rem; text-align: center; }
+    main#categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+      gap: 1rem; padding: 2rem;
+    }
+    .card {
+      background: #f5f5f5;
+      border-radius: 6px;
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform .2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card h2 { margin: 0.5rem 0; text-transform: capitalize; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Välj kategori</h1>
+  </header>
+  <main id="categories"></main>
+
+  <script>
+    // Hårdkoda kategorierna (silver & jarn)
+    const categories = ['silver','jarn'];
+    const container = document.getElementById('categories');
+    categories.forEach(cat => {
+      const a = document.createElement('a');
+      a.href = `${cat}.html`;
+      a.className = 'card';
+      a.innerHTML = `<h2>${cat.charAt(0).toUpperCase()+cat.slice(1)}</h2>`;
+      container.appendChild(a);
+    });
+  </script>
+</body>
+</html>
