@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!gallery || !window.PRODUCTS || !PRODUCTS[cat]) return;
 
   PRODUCTS[cat].forEach(async folder => {
-    const infoUrl = `bilder/${cat}/${folder}/info.txt`;
+    const infoUrl = `./bilder/${cat}/${folder}/info.txt`;
     let title = folder;
     let price = '';
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Gissa bildfil (du kan lägga till fler extension‑tester om du behöver)
-    const imgUrl = `bilder/${cat}/${folder}/bild.png`;
+    const imgUrl = `./bilder/${cat}/${folder}/bild.png`;
 
     // Bygg upp DOM‑noden
     const item = document.createElement('div');
