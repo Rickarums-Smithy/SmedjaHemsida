@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   PRODUCTS[cat].forEach(async folder => {
     const infoUrl = `./bilder/${cat}/${folder}/info.txt`;
-    let title = folder;
+    let title = 'info.txt';
     let price = '';
 
     try {
